@@ -17,5 +17,3 @@ echo "Age        : $age"
 echo "Department : $department"
 echo "Salary     : $salary"
 
-chmod +x employee.sh
-./employee.sh
