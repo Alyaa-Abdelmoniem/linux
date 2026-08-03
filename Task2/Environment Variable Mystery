@@ -18,6 +18,3 @@ echo "Company     : $COMPANY"
 echo
 echo "Have a productive day!"
 echo "=========================================="
-
-chmod +x assignment2.sh
-./assignment2.sh
