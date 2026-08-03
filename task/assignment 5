@@ -1,0 +1,21 @@
+nano employee.sh
+
+#!/bin/bash
+
+echo "Employee Registration System"
+
+read -p "Enter Employee Name: " name
+read -p "Enter Age: " age
+read -p "Enter Department: " department
+read -p "Enter Salary: " salary
+
+echo
+echo "Employee Information"
+echo "----------------------"
+echo "Name       : $name"
+echo "Age        : $age"
+echo "Department : $department"
+echo "Salary     : $salary"
+
+chmod +x employee.sh
+./employee.sh
