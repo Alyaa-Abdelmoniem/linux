@@ -1,1 +1,33 @@
+# Assignment 3 - Build Your Own Linux Shell Environment
 
+## Scenario
+The company wants every developer to have the same productive terminal environment, starting with a welcome screen that appears automatically every time a new terminal opens.
+
+## Files
+- welcome_screen_snippet.sh - a copy of the welcome screen code for documentation (the actual active code lives inside ~/.bashrc)
+
+## How It Works
+The welcome screen code was added to the end of ~/.bashrc. Since .bashrc runs automatically every time a new interactive terminal session starts, the welcome message is displayed without any manual action from the user.
+
+## Welcome Screen Output
+==========================================
+      Welcome to ITI Linux Environment
+==========================================
+
+User        : <current username>
+Hostname    : <machine hostname>
+Date        : <current date and time>
+Shell       : <path to login shell>
+Current Dir : <current working directory>
+
+Have a productive day!
+==========================================
+
+## Concepts Used
+- Shell startup files (~/.bashrc)
+- Command substitution: $(whoami), $(hostname), $(date), $(pwd)
+- Environment variable: $SHELL
+- echo for formatted terminal output
+
+## Note
+All displayed values (user, hostname, date, shell, directory) update automatically each time a new terminal is opened, since they are generated live using command substitution rather than hardcoded text.
