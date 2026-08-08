@@ -1,1 +1,52 @@
 
+# Assignment 4 - Customize Your Linux Terminal
+
+## Scenario
+Add custom shell functions so every new terminal automatically has a set of productivity commands.
+
+## Where the Code Lives
+All functions were added to the end of ~/.bashrc, so they are available automatically in every new terminal session.
+
+## Commands / Functions
+
+### print_content
+Displays the contents of the current directory.
+Usage: print_content
+Implementation: runs ls -l
+
+### go_to <directory>
+Changes the current working directory to the specified location.
+Usage: go_to ~/Projects
+Implementation: runs cd "$1", with an error message if the directory does not exist
+
+### search "keyword" filename
+Displays all matching lines in a file, with the matching text highlighted.
+Usage: search "hello" sample.txt
+Implementation: runs grep --color=always -n "$1" "$2"
+
+### show_file filename
+Displays the contents of a file with line numbers.
+Usage: show_file sample.txt
+Implementation: runs cat -n "$1"
+
+### remove filename
+Asks for confirmation before deleting a file.
+Usage: remove sample.txt
+Implementation: uses read -p to prompt y/n, then runs rm "$1" only if the user confirms with y
+
+### make_dir project/src/include
+Creates the complete directory hierarchy, even if intermediate directories do not exist.
+Usage: make_dir project/src/include
+Implementation: runs mkdir -p "$1"
+
+### create_file notes.txt
+Creates an empty file.
+Usage: create_file notes.txt
+Implementation: runs touch "$1"
+
+## Concepts Used
+- Shell functions defined in ~/.bashrc
+- Positional parameters ($1, $2)
+- Conditionals (if/else) for the delete confirmation
+- read -p for interactive user prompts
+- Commands: ls, cd, grep, cat, rm, mkdir, touch
