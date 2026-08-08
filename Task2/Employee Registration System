@@ -1,19 +1,14 @@
-nano employee.sh
-
 #!/bin/bash
 
-echo "Employee Registration System"
+read -p "Enter Employee Name: " emp_name
+read -p "Enter Age: " emp_age
+read -p "Enter Department: " emp_dept
+read -p "Enter Salary: " emp_salary
 
-read -p "Enter Employee Name: " name
-read -p "Enter Age: " age
-read -p "Enter Department: " department
-read -p "Enter Salary: " salary
-
-echo
-echo "Employee Information"
-echo "----------------------"
-echo "Name       : $name"
-echo "Age        : $age"
-echo "Department : $department"
-echo "Salary     : $salary"
-
+echo ""
+echo "===== Employee Registration Details ====="
+echo "Name       : $emp_name"
+echo "Age        : $emp_age"
+echo "Department : $emp_dept"
+echo "Salary     : $emp_salary"
+echo "==========================================="
