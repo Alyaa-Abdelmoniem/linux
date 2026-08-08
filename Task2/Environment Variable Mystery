@@ -1,20 +1,11 @@
+#!/bin/bash
 
+export COMPANY=ITI
+
+cd ~/Assignment2_EnvVariable
+
+nano company_env.sh
 
 #!/bin/bash
 
-export COMPANY="ITI"
-
-clear
-
-echo "=========================================="
-echo "Welcome to ITI Linux Environment"
-echo
-echo "User        : $USER"
-echo "Hostname    : $(hostname)"
-echo "Date        : $(date)"
-echo "Shell       : $SHELL"
-echo "Current Dir : $(pwd)"
-echo "Company     : $COMPANY"
-echo
-echo "Have a productive day!"
-echo "=========================================="
+export COMPANY=ITI
