@@ -1,15 +1,13 @@
-nano ~/.bashrc
-
 print_content() {
-    ls
+    ls -l
 }
 
 go_to() {
-    cd "$1"
+    cd "$1" || echo "Error: directory not found"
 }
 
 search() {
-    grep --color=auto "$1" "$2"
+    grep --color=always -n "$1" "$2"
 }
 
 show_file() {
@@ -17,7 +15,13 @@ show_file() {
 }
 
 remove() {
-    rm -i "$1"
+    read -p "Are you sure you want to delete '$1'? (y/n): " confirm
+    if [ "$confirm" = "y" ]; then
+        rm "$1"
+        echo "'$1' deleted."
+    else
+        echo "Cancelled."
+    fi
 }
 
 make_dir() {
@@ -27,5 +31,3 @@ make_dir() {
 create_file() {
     touch "$1"
 }
-
-source ~/.bashrc
