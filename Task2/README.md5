@@ -1,1 +1,39 @@
 
+# Assignment 5 - Employee Registration System
+
+## Scenario
+A script that registers a new employee by collecting their details and displaying them back in the terminal.
+
+## File
+- employee.sh
+
+## How to Run
+chmod +x employee.sh
+./employee.sh
+
+## What It Does
+The script prompts the user to enter:
+- Employee Name
+- Age
+- Department
+- Salary
+
+Then it prints all the entered information back to the terminal in a formatted report.
+
+## Example
+Enter Employee Name: Alyaa
+Enter Age: 22
+Enter Department: IT
+Enter Salary: 8000
+
+===== Employee Registration Details =====
+Name       : Alyaa
+Age        : 22
+Department : IT
+Salary     : 8000
+===========================================
+
+## Concepts Used
+- read -p for interactive user input
+- Variables to store user input
+- echo for formatted output display
