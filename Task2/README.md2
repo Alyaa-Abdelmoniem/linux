@@ -1,1 +1,26 @@
 
+# Assignment 2 - Environment Variable Mystery
+
+## Scenario
+The company wants every employee to have an environment variable COMPANY=ITI available automatically in every new terminal or shell session.
+
+## Requirement
+- Create the environment variable.
+- Verify it exists in the current shell, a child shell, and a new terminal.
+- Make the variable persistent across sessions.
+
+## Steps Taken
+1. Created the variable temporarily with: export COMPANY=ITI
+2. Verified it in the current shell with: echo $COMPANY
+3. Opened a child shell with bash and confirmed the variable was inherited (echo $COMPANY still showed ITI), because export makes a variable available to all child processes of the current shell.
+4. Opened a brand new terminal and found the variable was NOT there, because a temporary export only lives in the shell session it was run in and is lost once that session ends.
+5. Made the variable persistent by adding the line export COMPANY=ITI to the end of ~/.bashrc.
+6. Applied the change to the current shell without restarting it using: source ~/.bashrc
+7. Opened a new terminal and confirmed COMPANY=ITI now appears automatically.
+
+## Why ~/.bashrc Was Chosen
+~/.bashrc is read automatically every time a new interactive non-login bash shell starts (such as when opening a new terminal window). Since the requirement was for the variable to be available "every time a new terminal or shell is opened," .bashrc is the correct startup file, as opposed to files like ~/.bash_profile or ~/.profile which only run for login shells.
+
+## Deliverables
+- Screenshot of a new terminal showing echo $COMPANY output as ITI.
+- This report explaining the solution.
