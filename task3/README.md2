@@ -1,0 +1,32 @@
+# Assignment 2 - Mini Linux System Monitor
+
+## Description
+A menu-driven Bash script ("Linux Toolkit") that lets the user choose from a list of system-information options. It keeps showing the menu in a loop until the user chooses to exit.
+
+## File
+- `toolkit.sh`
+
+## How to Run
+chmod +x toolkit.sh
+./toolkit.sh
+
+## Menu
+=====================
+   Linux Toolkit
+=====================
+1) Show Date
+2) Show Uptime
+3) Show Logged Users
+4) Show Current Directory
+5) Show Disk Usage
+6) Show Memory Usage
+7) List Files
+8) Exit
+=====================
+
+## Explanation / Concepts Used
+- Functions: Each menu option (show_date, show_uptime, show_users, show_pwd, show_disk, show_memory, list_files) is written as its own function.
+- case statement: The user's menu choice is matched against options 1-8 using case ... in ... esac.
+- Loop: A while true; do ... done loop keeps showing the menu after every action, until the user picks option 8 (break ends the loop).
+- Command substitution: $(date), $(pwd) are used to capture command output.
+- Variables: choice stores the user's menu selection, read with read -p.
