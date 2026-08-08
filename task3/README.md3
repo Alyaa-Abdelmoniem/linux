@@ -1,0 +1,31 @@
+# Assignment 3 - Password Strength Checker
+
+## Description
+This script asks the user to enter a password (input is hidden while typing) and checks whether it meets five rules: at least 8 characters, an uppercase letter, a lowercase letter, a digit, and a special character. It then prints a report showing OK/Missing for each rule, plus an overall strength rating (Weak / Medium / Strong).
+
+## File
+- password_check.sh
+
+## How to Run
+chmod +x password_check.sh
+./password_check.sh
+
+## Explanation / Concepts Used
+- Hidden input: read -s -p "Enter password: " reads the password without echoing it to the screen.
+- String length: ${#password} gives the number of characters, used to check the minimum length of 8.
+- Pattern matching (regex): Bash's [[ "$password" =~ PATTERN ]] is used to detect uppercase ([A-Z]), lowercase ([a-z]), digits ([0-9]), and special characters ([^a-zA-Z0-9]).
+- Conditions: Each check uses an if statement to set a result (OK/Missing) and increase a score counter.
+- Overall rating: 5/5 gives Strong, 3-4/5 gives Medium, 0-2/5 gives Weak.
+
+## Example
+Enter password:
+
+Password Strength Report
+
+Length          : OK
+Uppercase       : OK
+Lowercase       : OK
+Digit           : Missing
+Special Char    : OK
+
+Overall: Medium
