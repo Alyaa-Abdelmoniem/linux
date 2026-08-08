@@ -1,10 +1,41 @@
-
 #!/bin/bash
 
-while true
-do
+show_date() {
+    echo "Current Date/Time: $(date)"
+}
+
+show_uptime() {
+    echo "System Uptime:"
+    uptime
+}
+
+show_users() {
+    echo "Logged In Users:"
+    who
+}
+
+show_pwd() {
+    echo "Current Directory: $(pwd)"
+}
+
+show_disk() {
+    echo "Disk Usage:"
+    df -h
+}
+
+show_memory() {
+    echo "Memory Usage:"
+    free -h
+}
+
+list_files() {
+    echo "Files in current directory ($(pwd)):"
+    ls -l
+}
+
+show_menu() {
     echo "====================="
-    echo "Linux Toolkit"
+    echo "   Linux Toolkit"
     echo "====================="
     echo "1) Show Date"
     echo "2) Show Uptime"
@@ -14,20 +45,24 @@ do
     echo "6) Show Memory Usage"
     echo "7) List Files"
     echo "8) Exit"
+    echo "====================="
+}
 
-    read -p "Choose an option: " choice
+while true; do
+    show_menu
+    read -p "Choose an option [1-8]: " choice
 
-    case $choice in
-        1) date ;;
-        2) uptime ;;
-        3) who ;;
-        4) pwd ;;
-        5) df -h ;;
-        6) free -h ;;
-        7) ls ;;
-        8) echo "Goodbye"; break ;;
-        *) echo "Invalid option" ;;
+    case "$choice" in
+        1) show_date ;;
+        2) show_uptime ;;
+        3) show_users ;;
+        4) show_pwd ;;
+        5) show_disk ;;
+        6) show_memory ;;
+        7) list_files ;;
+        8) echo "Exiting... Goodbye!"; break ;;
+        *) echo "Invalid option. Please choose a number between 1 and 8." ;;
     esac
 
-    echo
+    echo ""
 done
