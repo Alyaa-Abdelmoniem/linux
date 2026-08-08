@@ -1,0 +1,33 @@
+# Assignment 1 - Arithmetic Operations
+
+## Description
+This script asks the user to enter two integers and then displays:
+- Sum
+- Difference
+- Multiplication
+- Division
+- Modulus
+
+## File
+- `arithmetic.sh`
+
+## How to Run
+```bash
+chmod +x arithmetic.sh
+./arithmetic.sh
+
+Explanation
+
+	•	read -p is used to prompt the user and store the input in num1 and num2.
+	•	Bash arithmetic expansion $(( )) is used to calculate the sum, difference,
+multiplication, division, and modulus
+
+Example:
+Enter first number: 20
+Enter second number: 30
+
+Sum = 50
+Difference = -10
+Multiplication = 600
+Division = 0
+Modulus = 20
